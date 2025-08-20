@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gender Auto Detection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      animation: slideDown 0.5s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-150px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .popup h3 {
+      margin-top: 0;
+    }
+
+    .popup input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .popup button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay" id="popupOverlay">
+  <div class="popup">
+    <h3>Enter Your Name</h3>
+    <input type="text" id="nameInput" placeholder="Your name">
+    <div class="error" id="errorMsg"></div>
+    <button onclick="submitForm()">Submit</button>
+  </div>
+</div>
+
+<script>
+  const invalidNames = [];
+
+  // Extended female endings
+  const femaleEndings = [
+    "rekha", "leena", "lata", "nita", "sita", "priya", "kshi", "mala", "vathi", "bala", "rani",
+    "ita", "sha", "na", "ta", "ya", "ri", "li", "mi", "si", "vi", "ni", "ka", "la", "thi",
+    "a", "aa", "i", "ee"
+  ];
+
+  // Extended male endings
+  const maleEndings = [
+    "inder", "preet", "deep", "jeet", "veer", "kant", "nath", "raj", "pal", "ant", "jit", "dev", "ram",
+    "esh", "man", "sh", "ak", "it", "an", "ev", "in", "en", "on", "al", "il", "ar", "ir",
+    "n", "l", "r"
+  ];
+
+  // Sort longest to shortest for better match priority
+  femaleEndings.sort((a, b) => b.length - a.length);
+  maleEndings.sort((a, b) => b.length - a.length);
+
+  function detectGenderFromEnding(name) {
+    const lowerName = name.toLowerCase();
+
+    for (let end of femaleEndings) {
+      if (lowerName.endsWith(end)) return "Female";
+    }
+
+    for (let end of maleEndings) {
+      if (lowerName.endsWith(end)) return "Male";
+    }
+
+    return "Other";
+  }
+
+  function submitForm() {
+    const input = document.getElementById("nameInput");
+    const name = input.value.trim();
+    const error = document.getElementById("errorMsg");
+
+    if (name) {
+      const gender = detectGenderFromEnding(name);
+
+      if (gender === "Male") {
+        window.location.href = "male.html";
+      } else if (gender === "Female") {
+        window.location.href = "female.html";
+      } else {
+        // Unknown gender
+        invalidNames.push(name);
+        console.log("Invalid Name List:", invalidNames);
+
+        error.textContent = "Name not recognized as male/female. Please enter another name.";
+        input.value = "";
+        input.focus();
+      }
+    } else {
+      error.textContent = "Please enter your name.";
+      input.focus();
+    }
+  }
+
+  window.onload = function() {
+    document.getElementById('popupOverlay').style.display = 'flex';
+    document.getElementById('nameInput').focus();
+  };
+</script>
+
+</body>
+</html>
