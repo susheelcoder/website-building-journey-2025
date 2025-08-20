@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Header with Search Icon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="header.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo" style="text-decoration: none;">
+      <!-- <img src="img2.png" alt="" width="50" height="40px" /> -->
+      🌟 <span style="color: #ffdf5e;">Techie</span><span style="color: #e0dddd;">susheel</span>
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    <nav class="navbar" id="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." />
+        <button title="Search">🔍</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Auto Hiding Welcome Popup -->
+  <div id="welcomePopup" class="welcome-popup">
+    👋 Welcome to TechieSusheel!
+  </div>
+
+  <!-- Chat Icon (Single, triggers nickname prompt) -->
+  <div class="chat-icon" onclick="openNicknamePrompt()" title="Chat with us">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 2H4a2 2 0 0 0-2 2v14l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/>
+    </svg>
+  </div>
+
+  <!-- Nickname Prompt -->
+  <div class="nickname-popup" id="nicknamePopup">
+    <div class="nickname-content">
+      <h3>Enter your Nickname</h3>
+      <input type="text" id="nicknameInput" placeholder="Nickname" />
+      <div class="nickname-buttons">
+        <button onclick="startChat()">Start Chat</button>
+        <button onclick="closeNicknamePrompt()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Popup -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+      <span>TechieSusheel Chat</span>
+      <button onclick="toggleChatBox()">✖</button>
+    </div>
+    <iframe id="chatFrame" src=""></iframe>
+  </div>
+
+  <!-- JS -->
+  <script src="header.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TechieSusheel | Web Developer, App Creator & Blogger</title>
+  <meta name="description" content="TechieSusheel is the personal website of Susheel Kumar — a passionate web developer, app creator, and technology blogger from India. Explore innovative projects, blogs, and tutorials." />
+  <meta name="keywords" content="TechieSusheel, Susheel Kumar, web developer, app developer, tech blog, programming, HTML, CSS, JavaScript, Python, app creator, Indian coder, IMS Noida" />
+  <meta name="author" content="Susheel Kumar" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+
+  <style>
+    @keyframes move {
+      0% { transform: translateX(-10vw) scale(0.5); opacity: 0.5; }
+      100% { transform: translateX(110vw) scale(1.2); opacity: 0; }
+    }
+
+    @keyframes rainbowFlash {
+      0% { box-shadow: 0 0 10px red; background: red; }
+      20% { box-shadow: 0 0 10px orange; background: orange; }
+      40% { box-shadow: 0 0 10px yellow; background: yellow; color: #000; }
+      60% { box-shadow: 0 0 10px green; background: green; }
+      80% { box-shadow: 0 0 10px blue; background: blue; }
+      100% { box-shadow: 0 0 10px violet; background: violet; }
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body id="body" class="transition-all duration-500 ease-in-out bg-yellow-400 text-black font-sans m-0 p-0 min-h-screen">
+
+  <!-- Animated Background -->
+  <div style="position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;">
+    <script>
+      let c = ["#ff7f7f", "#7fbfff", "#7fff7f", "#ffbf7f", "#bf7fff", "#7fffff", "#ffff7f"];
+      for (let i = 0; i < 70; i++) {
+        let b = document.createElement("div");
+        Object.assign(b.style, {
+          position: "absolute",
+          borderRadius: "50%",
+          background: c[Math.random() * c.length | 0],
+          opacity: "0.4",
+          width: Math.random() * 20 + 10 + "px",
+          height: Math.random() * 20 + 10 + "px",
+          top: Math.random() * 100 + "%",
+          left: "-30px",
+          animation: `move ${4 + Math.random() * 4}s linear ${Math.random() * 3}s infinite`
+        });
+        document.body.appendChild(b);
+      }
+    </script>
+  </div>
+
+
+             
+
+
+  <!-- Main Section -->
+  <main class="flex flex-col lg:flex-row items-center justify-center min-h-screen pt-20 px-4">
+    <div class="text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2">Hi, I'm Susheel</h1>
+      <h2 class="text-5xl font-bold text- overflow animate-pulse mb-4">Web Developer</h2>
+      <p class="text-lg italic text-gray-700 mb-4">
+        "Code likhta hoon sapno ko sajane के लिए,
+        Har pixel mein chhupi है मेरी ज़िंदगी की कहानी।
+        Bug se लड़ता हूँ, logic से खेलता हूँ,
+        Web ki duniya में अपना एक नाम बनाना है मुझे।"
+      </p>
+
+      <a href="About.html">
+        <button style="padding:10px 20px;font-size:18px;color:#fff;background:#111;border:none;border-radius:10px;cursor:pointer;animation:rainbowFlash 3s infinite alternate;box-shadow:0 0 10px #fff;">
+          ⚡ View My Site
+        </button>
+      </a>
+
+      <br><br>
+
+      <a class="flex items-center space-x-2 text-black font-bold" href="https://sites.google.com/view/skpandit25-/home">
+        <span>Contact Me ➡️</span>
+       
+      </a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="lg:w-1/2 flex justify-center">
+      <div style="position: relative; display: inline-block;">
+        <div style="
+          position: absolute;
+          top: -12px; left: -12px;
+          width: calc(100% + 24px);
+          height: calc(100% + 24px);
+          border-radius: 9999px;
+          background: conic-gradient(from 0deg, #00ffff, #ff00ff, #00ff00, #ff0000, #00ffff);
+          filter: blur(20px);
+          z-index: 0;
+          animation: rotateGlow 6s linear infinite;
+        "></div>
+
+        <img src="img0.jpg" alt="Susheel's Image" width="450"
+          style="position: relative; z-index: 1; border-radius: 9999px; border: 8px solid white; box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);" />
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Theme Management
+    function toggleColorPanel() {
+      const panel = document.getElementById('colorPanel');
+      panel.classList.toggle('hidden');
+    }
+
+    function changeTheme(element) {
+      const bgClass = element.dataset.bg;
+      const textClass = element.dataset.text;
+      
+      document.body.className = `transition-all duration-500 ease-in-out min-h-screen bg-${bgClass} text-${textClass}`;
+      document.querySelector('header').className = `flex justify-between items-center p-4 shadow-md fixed top-0 left-0 right-0 bg-${bgClass} text-${textClass} z-50`;
+      
+      localStorage.setItem('theme', JSON.stringify({ bg: bgClass, text: textClass }));
+      toggleColorPanel();
+    }
+
+    // Close color panel when clicking outside
+    document.addEventListener('click', (e) => {
+      const colorPanel = document.getElementById('colorPanel');
+      const colorButton = document.querySelector('[onclick="toggleColorPanel()"]');
+      
+      if (!colorPanel.contains(e.target) && !colorButton.contains(e.target)) {
+        colorPanel.classList.add('hidden');
+      }
+    });
+
+    // --- AUTO THEME CHANGER ---
+    const colors = [
+      { bg: 'red-500', text: 'white' },
+      { bg: 'blue-500', text: 'white' },
+      { bg: 'green-500', text: 'white' },
+      { bg: 'purple-500', text: 'white' },
+      { bg: 'pink-500', text: 'white' },
+      { bg: 'yellow-400', text: 'black' },
+      { bg: 'indigo-500', text: 'white' },
+      { bg: 'teal-500', text: 'white' },
+      { bg: 'orange-500', text: 'black' },
+      { bg: 'white', text: 'black' }
+    ];
+
+    let currentColorIndex = 0;
+
+    function applyTheme(bgClass, textClass) {
+      document.body.className = `transition-all duration-500 ease-in-out min-h-screen bg-${bgClass} text-${textClass}`;
+      document.querySelector('header').className = `flex justify-between items-center p-4 shadow-md fixed top-0 left-0 right-0 bg-${bgClass} text-${textClass} z-50`;
+      localStorage.setItem('theme', JSON.stringify({ bg: bgClass, text: textClass }));
+    }
+
+    function autoChangeTheme() {
+      const { bg, text } = colors[currentColorIndex];
+      applyTheme(bg, text);
+      currentColorIndex = (currentColorIndex + 1) % colors.length;
+    }
+
+    setInterval(autoChangeTheme, 10000); // 30 seconds
+
+    // Load saved theme on startup (overrides auto theme if present)
+    window.addEventListener('load', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        const { bg, text } = JSON.parse(savedTheme);
+        applyTheme(bg, text);
+      }
+    });
+  </script>
+</body>
+</html>
+
+<div id="colorPanel" class="hidden absolute top-16 right-4 bg-white shadow-lg rounded-lg p-4 z-50">
+    <h3 class="text-lg font-semibold mb-2">Choose Theme</h3>
+    <div class="flex justify-between mb-4">
+      <a href="index.html" class="px-4 py-2 bg-yellow-400 text-black rounded-lg font-semibold hover:bg-yellow-300 transition">Home</a>
+      <a href="About.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-400 transition">About</a>
+    </div>
+    <div class="grid grid-cols-2 gap-2">
+      <button data-bg="red-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-red-500 text-white rounded-lg">Red</button>
+      <button data-bg="blue-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-blue-500 text-white rounded-lg">Blue</button>
+      <button data-bg="green-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-green-500 text-white rounded-lg">Green</button>
+      <button data-bg="purple-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-purple-500 text-white rounded-lg">Purple</button>
+      <button data-bg="pink-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-pink-500 text-white rounded-lg">Pink</button>
+      <button data-bg="yellow-400" data-text="black" onclick="changeTheme(this)" class="w-full h-10 bg-yellow-400 text-black rounded-lg">Yellow</button>
+      <button data-bg="indigo-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-indigo-500 text-white rounded-lg">Indigo</button>
+      <button data-bg="teal-500" data-text="white" onclick="changeTheme(this)" class="w-full h-10 bg-teal-500 text-white rounded-lg">Teal</button>
+      <button data-bg="orange-500" data-text="black" onclick="changeTheme(this)" class="w-full h-10 bg-orange-500 text-black rounded-lg">Orange</button>
+      <button data-bg="white" data-text="black" onclick="changeTheme(this)" class="w-full h-10 bg-white text-black rounded-lg border border-gray-300">White</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="">
