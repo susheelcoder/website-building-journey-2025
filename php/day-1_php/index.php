@@ -35,5 +35,16 @@
      I love coding, learning new technologies, and creating unique projects.<br>
      My date of birth is <b>$DOB</b>, and I am passionate about <b>$passion</b>.<br>";
     ?>
+    <br><br><br>
+    <hr>
+    <div>
+        Hi, my name is <b><?php echo $name; ?></b><br>
+        My full name is <b><?php echo $fullname; ?></b> and I am a web developer.br <br>
+        I am the creator of the website <b><?php echo $sitename; ?></b>.<br>
+        I love coding, learning new technologies, and creating unique projects.<br>
+        My date of birth is <b><?php echo $DOB; ?></b>, and I am passionate about <b><?php echo $passion; ?></b>.<br>
+    </div>
+    <br><br><br>
+    <hr>
 </body>
 </html>
