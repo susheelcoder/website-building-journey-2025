@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    img {
+        border-color: black;
+        border-radius: 20px;
+
+    }
+</style>
+
+<body>
+    <hr>
+    <section>
+        <img id="img" src="img1.jpg" width="200px">
+        <button onclick="document.getElementById('img').src='img2.jpg'">change img</button>
+    </section>
+    <hr>
+    <section>
+        <button onclick="document.getElementById('img1').src='img3.jpg'"><img id="img1" src="img2.jpg"
+                width="200px"></button>
+    </section>
+    <hr>
+    <section>
+        <img src="img3.jpg" width="200px" onclick="this.src=this.src.includes('img1.jpg') ? 'img3.jpg' : 'img2.jpg';">
+
+        </button>
+    </section>
+    <hr>
+    <section>
+
+        <img id="img2" src="img2.jpg" width="200px" onclick="changeImage()">
+
+        <script>
+            let images = ['img1.jpg', 'img2.jpg', 'img3.jpg'];
+            let index = 0;
+
+            function changeImage() {
+                index = (index + 1) % images.length; // loop through images
+                document.getElementById('img2').src = images[index];
+            }
+        </script>
+    </section>
+    <hr>
+</body>
+
+</html>
