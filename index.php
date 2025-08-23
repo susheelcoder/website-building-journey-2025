@@ -23,6 +23,9 @@
         <ol>
             <li> <a href="/php/day-1_php/index.php">day-1_php</a> </li>
             <li> <a href="/php/day-2_php/index.php">day-2_php</a> </li>
+            <li> <a href="/php/day-3_form/index.php">day-3_form</a> </li>
+            <li> <a href="/php/day-4/index.php">day-4</a> </li>
+            <li> <a href="/php/day-5/index.php">day-5</a> </li>
         </ol>
     </h2>
 </body>
