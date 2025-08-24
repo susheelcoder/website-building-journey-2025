@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .firstSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 145px 0;
+        padding: 0 5%;
+        flex-wrap: wrap;
+    }
+
+    .firstSection>div {
+        width: 30%;
+    }
+
+    .leftSection {
+        margin: 30px 0;
+        font-size: 2.5rem;
+    }
+
+    .rightSection img {
+        width: 350px;
+        height: auto;
+        border-radius: 25px;
+        /* Slightly lower radius for better look */
+        border: 3px solid #000000;
+        /* Bold black border */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.612);
+        /* Deeper shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        object-fit: cover;
+        /* Crop nicely if needed */
+    }
+
+    /* On hover effect */
+    .rightSection img:hover {
+        transform: scale(1.03);
+        /* Slight zoom effect */
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+        /* Bigger shadow on hover */
+    }
+
+
+    .purple {
+        color: rgb(150, 89, 230);
+    }
+
+    #element {
+        color: rgb(150, 89, 230);
+    }
+
+    .btn {
+        background-color: aqua;
+        margin: 30px 20px 20px 0;
+        padding: 12px 24px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #000;
+        border: 3px solid #000;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgb(10, 10, 10);
+        transition: all 0.3s ease;
+        border-radius: 50px;
+    }
+
+
+    .btn:hover {
+        background-color: #00cccc;
+        color: #fff;
+        border-color: #00a3a3;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+    }
+
+
+    @media (max-width: 768px) {
+        .firstSection {
+            flex-direction: row;
+            align-items: center;
+            padding: 0px 0px;
+            text-align: center;
+        }
+
+        .leftSection {
+            height: auto;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .rightSection img {
+            width: 180px;
+            height: auto;
+            border-radius: 50px;
+            box-shadow: 0 0 15px rgba(100, 14, 212, 0.2);
+        }
+
+        .purple {
+            color: #4e07c0e5;
+            font-weight: bold;
+        }
+
+        #element {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            color: #5d20a3;
+        }
+
+
+        .firstSection>div {
+            width: 45%;
+        }
+
+        .secondSection {
+            padding: 10px;
+        }
+
+        .btn {
+            margin: 9px 5px 11px 3px;
+            padding: 5px 0px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+    }
+    
+</style>
+
+<body>
+    <section class="firstSection">
+        <div class="leftSection">
+            Hi My name is <span class="purple">Susheel</span>
+            <div>and I am a passionate </div>
+            <b>Website Developer</b>
+            <div class="button-group" style="margin-top: 20px; display: flex;">
+                <!-- <a href="resume/Susheel_Resume.pdf" download class="btn">Download Resume</a> -->
+                <a href=" " download class="btn" style="color: #000000;">Download
+                    Resume</a>
+                <a href="" target="_blank" class="btn" style="color: #000000;">
+                    <i class="fab fa-github"></i> Visit GitHub
+                </a>
+            </div>
+        </div>
+        <div class="rightSection">
+            <img src="img.jpg" alt="Developer Image">
+        </div>
+
+    </section>
+</body>
+
+</html>
