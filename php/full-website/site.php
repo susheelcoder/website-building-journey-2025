@@ -8,6 +8,20 @@ if (isset($_POST['submit'])) {
     move_uploaded_file($tmp, $image);
 }
 ?>
+<!--skills  -->
+<?php
+function getSkills($totalSkills = 10) {
+    $skills = [];
+    for ($i = 1; $i <= $totalSkills; $i++) {
+        if (!empty($_POST["skills$i"])) {
+            $skills[] = htmlspecialchars($_POST["skills$i"]);
+        }
+    }
+    return $skills;
+}
+
+$skillsList = getSkills(10);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +37,7 @@ if (isset($_POST['submit'])) {
     <!-- <meta http-equiv="refresh" content="5; url=http://google.com"> -->
     <link rel="icon" href="<?php echo $image; ?>" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     <title><?php echo $name; ?></title>
 </head>
 
@@ -48,21 +63,21 @@ if (isset($_POST['submit'])) {
     </header>
     <!--======== niv ========-->
     <section class="nav-section">
-        <nav>
+        <nav class="nav-rightside">
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Projects</li>
-                <li>Contact</li>
-                <li>Services</li>
-                <li>Blog</li>
-                <li>Gallery</li>
-                <li>FAQ</li>
-                <li>Team</li>
-                <li>Careers</li>
-                <li>Privacy</li>
-                <li>Terms</li>
-
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">contact</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+                <li><a href="#Team">Team</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
             </ul>
         </nav>
     </section>
@@ -86,7 +101,70 @@ if (isset($_POST['submit'])) {
         </div>
     </section>
     <hr>
-    <!--======== page========-->
+    <!--======== page  #about ========-->
+    <br>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>👨‍💻 About Me</h2>
+                <p>
+                    Hello! I'm <strong> <?php echo $name; ?> </strong> , a passionate and self-driven developer who
+                    loves creating innovative, efficient, and user-friendly digital solutions. I enjoy learning new
+                    technologies, tackling real-world problems, and continuously improving my skills to stay ahead in
+                    the tech world.
+                </p>
+                <p>
+                    I strongly believe in teamwork, collaboration, and the power of continuous learning. Whether it’s
+                    web development, frontend design, or building scalable software, my goal is to deliver high-quality
+                    solutions that provide the best user experience and performance.
+                </p>
+            </div>
+            <!-- <div class="about-photo">
+                    <img src="img/about.jpg" alt="Susheel smiling confidently in casual outfit" />
+                </div> -->
+        </div>
+    </section>
+    <hr>
+    <!--======== page  #skills ========-->
+    <section id="skills" class="skills-section">
+        <h2>Skills-📲</h2>
+        <div class="skills-grid">
+            <?php foreach ($skillsList as $skill): ?>
+                <span class="skill-badge"><?php echo $skill; ?></span>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <hr>
+    <!--======== footer ========-->
+    <footer>
+            <div class="footer-div-1"> 
+                <ul class=" footer-ul-SO">
+                    <li><a class="footer-a" href="#"><i class="ri-instagram-line"></i></a></li>
+                    <li><a class="footer-a" href="#"><i class="ri-facebook-circle-line"></i></a></li>
+                    <li><a class="footer-a" href="#"><i class="ri-twitter-line"></i></a></li>
+                    <li><a class="footer-a" href="#"><i class="ri-linkedin-box-line"></i></a></li>
+                    <li><a class="footer-a" href="#"><i class="ri-youtube-line"></i></a></li>
+                    <li><a class="footer-a" href="#"><i class="ri-github-line"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-div-1">
+            <ul class="footer-ul-SO">
+                <li class=".footer-a" ><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="home">home</a></li>
+            </ul>
+            </div>
+            <div class="footer-div-1">
+                 <p>Copyright ©2025; Designed by <?php echo $name?></p>
+            </div>
+        </footer>
+
 
 
 

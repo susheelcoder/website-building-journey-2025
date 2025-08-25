@@ -29,6 +29,9 @@
             <li> <a href="/php/day-6/index.php">day-6</a> </li>
             <li> <a href="/php/day-7/index.php">day-7</a> </li>
             <li> <a href="/php/day-8_php/index.php">day-8</a> </li>
+            <li> <a href="/php/day-9_php/index.php">day-9</a> </li>
+            <li> <a href="/php/day-10_php/index.php">day-10</a> </li>
+            <li> <a href="/php/day-11_php/index.php">day-11</a> </li>
         </ol>
         <li> <a href="/php/full-website/index.php">full site jarni</a> </li>
     </h2>
