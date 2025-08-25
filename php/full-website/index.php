@@ -21,6 +21,16 @@
         <input type="file" name="image" required><br><br>
         <input type="text" name="name" placeholder="Enter your name" required><br><br>
         <input type="text" name="passionate" placeholder="passionate" required><br><br>
+        <input type="text" name="skills1" placeholder="skills-1" ><br><br>
+        <input type="text" name="skills2" placeholder="skills-2" ><br><br>
+        <input type="text" name="skills3" placeholder="skills-3" ><br><br>
+        <input type="text" name="skills4" placeholder="skills-4" ><br><br>
+        <input type="text" name="skills5" placeholder="skills-5" ><br><br>
+        <input type="text" name="skills6" placeholder="skills-6" ><br><br>
+        <input type="text" name="skills7" placeholder="skills-7" ><br><br>
+        <input type="text" name="skills8" placeholder="skills-8" ><br><br>
+        <input type="text" name="skills9" placeholder="skills-9" ><br><br>
+        <input type="text" name="skills10" placeholder="skills-10" ><br><br>
         <input type="submit" name="submit" value="Upload">
     </form>
     <hr>
