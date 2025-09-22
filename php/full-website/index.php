@@ -17,7 +17,7 @@
 <body>
     <section class="section">
         <hr>
-    <form action="site.php" method="post" enctype="multipart/form-data">
+    <form action="web.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image" required><br><br>
         <input type="text" name="name" placeholder="Enter your name" required><br><br>
         <input type="text" name="passionate" placeholder="passionate" required><br><br>
@@ -56,15 +56,17 @@
     <img src="<?php echo $image; ?>" width="100px">
       <b><?php echo $name; ?></b>
       <b><?php echo $passionate; ?></b>
-    
+ 
+      
+      
 </body>
 </html>
 <!-- action="site.php" -->
 
-
+<!-- 
 <style>
     .ok{
          height:50px;
     }
 </style>
-<h1 style="margin-left: 200px 'height:50px;"></h1>
+<h1 style="margin-left: 200px 'height:50px;"></h1> -->
